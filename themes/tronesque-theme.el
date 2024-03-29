@@ -180,9 +180,10 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(erc-nick-msg-face ((t (:foreground ,red :weight bold))))
    `(erc-notice-face ((t (:foreground ,base02 :weight bold))))
    `(erc-pal-face ((t (:foreground ,magenta :weight bold))))
-   `(erc-prompt-face ((t (:background ,violet
-                          :foreground ,base00
-                          :weight bold))))
+   ;; `(erc-prompt-face ((t (:background ,violet
+   ;;                        :foreground ,base00
+   ;;                        :weight bold))))
+   `(erc-prompt-face ((t (:foreground ,violet :weight bold))))
    `(erc-timestamp-face ((t (:foreground ,green :weight bold))))
    `(erc-input-face ((t (:foreground ,orange))))
    `(erc-my-nick-face ((t (:foreground ,yellow))))
