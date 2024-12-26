@@ -38,50 +38,45 @@
   "Theme based on Tron universe. Colors are inspired / taken from the movies.
 More information on Tron: https://en.wikipedia.org/wiki/Tron")
 
-(let (
-      (base00 (if (window-system) "#081724" "black"))
-      (base01 (if (window-system) "#033340" "brightblack"))
-      (base02 (if (window-system) "#1d5483" "brightyellow"))
-      (base03 (if (window-system) "#2872b2" "brightblue"))
-      (base04 (if (window-system) "#d3f9ee" "white"))
-      (base05 (if (window-system) "#a6f3dd" "brightgreen"))
-      (base06 (if (window-system) "#effffe" "brightwhite"))
-      (base07 (if (window-system) "#fffed9" "brightcyan"))
-      (red (if (window-system) "#ff694d" "red"))
-      (orange (if (window-system) "#f5b55f" "brightred"))
-      (yellow (if (window-system) "#fffe4e" "yellow"))
+(let ((base00  (if (window-system) "#081724" "black"))
+      (base01  (if (window-system) "#033340" "brightblack"))
+      (base02  (if (window-system) "#1d5483" "brightyellow"))
+      (base03  (if (window-system) "#2872b2" "brightblue"))
+      (base04  (if (window-system) "#d3f9ee" "white"))
+      (base05  (if (window-system) "#a6f3dd" "brightgreen"))
+      (base06  (if (window-system) "#effffe" "brightwhite"))
+      (base07  (if (window-system) "#fffed9" "brightcyan"))
+      (red     (if (window-system) "#ff694d" "red"))
+      (orange  (if (window-system) "#f5b55f" "brightred"))
+      (yellow  (if (window-system) "#fffe4e" "yellow"))
       (magenta (if (window-system) "#afc0fd" "brightmagenta"))
-      (violet (if (window-system) "#96a5d9" "magenta"))
-      (blue (if (window-system) "#bad6e2" "blue"))
-      (cyan (if (window-system) "#d2f1ff" "cyan"))
-      (green (if (window-system) "#68f6cb" "green")))
+      (violet  (if (window-system) "#96a5d9" "magenta"))
+      (blue    (if (window-system) "#bad6e2" "blue"))
+      (cyan    (if (window-system) "#d2f1ff" "cyan"))
+      (green   (if (window-system) "#68f6cb" "green")))
 
   (custom-theme-set-faces
    'tronesque
-
-
    `(button ((t (:background ,base00
-                 :foreground ,magenta
-                 :inherit nil
-                 :box (:line-width 2 :style released-button)))))
+                             :foreground ,magenta
+                             :inherit nil
+                             :box (:line-width 2 :style released-button)))))
    `(cursor ((t (:background ,base06))))
-
    `(custom-button ((t (:background ,magenta
-                        :foreground ,base00
-                        :inherit nil
-                        :box (:line-width 2 :style released-button)))))
+                                    :foreground ,base00
+                                    :inherit nil
+                                    :box (:line-width 2 :style released-button)))))
    `(custom-state ((t (:foreground ,green))))
    `(default ((t (:background ,base00 :foreground ,base04))))
    `(dired-directory ((t (:background ,green :foreground ,base00))))
    `(dired-symlink ((t (:foreground ,yellow))))
-
    `(escape-glyph ((t (:foreground ,green))))
    `(flymake-errline ((t (:background ,red
-                          :foreground ,base00
-                          :underline nil))))
+                                      :foreground ,base00
+                                      :underline nil))))
    `(flymake-warnline ((t (:background ,orange
-                           :foreground ,base00
-                           :underline nil))))
+                                       :foreground ,base00
+                                       :underline nil))))
    `(font-lock-builtin-face ((t (:slant italic :foreground ,violet))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,base03))))
    `(font-lock-comment-face ((t (:foreground ,base03))))
@@ -98,14 +93,17 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(font-lock-variable-name-face ((t (:foreground ,red))))
    `(font-lock-warning-face ((t (:foreground ,orange :underline t))))
    `(fringe ((t (:foreground ,base04 :background ,base01))))
-   `(header-line ((t (:box (:line-width -1 :color nil :style released-button)
-                      :foreground ,base00 :background ,base07))))
+   ;; TODO: fix this, it's too bright
+   ;; `(header-line ((t (:box (:line-width -1 :color nil :style released-button)
+   ;;                         :foreground ,base00 :background ,base07))))
+   `(header-line ((t (:background ,base01 :foreground ,base04 :inverse-video nil))))
+   `(mode-line-highlight ((t (:box (:line-width 2 :color "#68f6cb" :style nil)))))
    `(highlight ((t (:background ,yellow :foreground ,base00))))
    `(hl-line ((t (:background ,base01 :inherit nil))))
    `(idle-highlight ((t (:background ,base01 :foreground nil))))
    `(ido-indicator ((t (:background ,red
-                        :foreground ,base00
-                        :width condensed))))
+                                    :foreground ,base00
+                                    :width condensed))))
    `(ido-only-match ((t (:background ,green :foreground ,base00))))
    `(ido-first-match ((t (:background ,green :foreground ,base00))))
    `(ido-subdir ((t (:foreground ,red))))
@@ -114,8 +112,8 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(isearch ((t (:weight bold :foreground ,base00 :background ,yellow))))
    `(isearch-fail ((t (:weight bold :foreground ,red))))
    `(lazy-highlight ((t (:weight bold
-                         :foreground ,base00
-                         :background ,base07))))
+                                 :foreground ,base00
+                                 :background ,base07))))
    `(link ((t (:foreground ,cyan :underline t))))
    `(link-visited ((t (:foreground ,blue :underline t))))
    `(match ((t (:foreground ,base00 :background ,blue))))
@@ -130,28 +128,36 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(secondary-selection ((t (:background ,base01))))
    `(shadow ((t (:foreground ,base02))))
    `(trailing-whitespace ((t (:background ,red))))
-
    `(magit-header ((t (:background ,base01
-                       :foreground ,magenta
-                       :inherit nil ))))
+                                   :foreground ,magenta
+                                   :inherit nil ))))
    `(magit-item-highlight ((t (:background ,base01 :foreground ,base06))))
    `(magit-branch ((t (:foreground ,base05))))
    `(magit-diff-hunk-header ((t (:background ,base02))))
    `(magit-section-title ((t (:background ,orange
-                              :foreground ,base00
-                              :inherit nil
-                              :box (:line-width 2 :style released-button)))))
+                                          :foreground ,base00
+                                          :inherit nil
+                                          :box (:line-width 2 :style released-button)))))
+   `(magit-section-highlight ((t (:background ,base01))))
+   `(magit-branch-local ((t (:foreground ,yellow))))
+   `(magit-branch-remote ((t (:foreground ,green))))
+   `(magit-diff-added-highlight ((t (:inherit diff-added :background ,base01))))
+   `(magit-diff-removed-highlight ((t (:inherit diff-removed :background ,base01))))
+   `(magit-diff-context-highlight ((t (:foreground "grey70" :background ,base01))))
+   `(magit-diff-hunk-heading-highlight ((t (:background "#2d4f67"))))
+   `(magit-diff-hunk-heading ((t (:foreground "grey70" :background "#223249"))))
+   ;; TODO: add diff-header
    `(diff-file-header ((t (:background ,base00
-                           :foreground ,magenta
-                           :inherit nil
-                           :box (:line-width 2 :style released-button)))))
+                                       :foreground ,magenta
+                                       :inherit nil
+                                       :box (:line-width 2 :style released-button)))))
    `(diff-context ((t (:inherit diff-changed :foreground ,base03))))
    `(diff-added ((t (:inherit diff-changed
-                     :foreground ,green
-                     :background ,base00))))
+                              :foreground ,green
+                              :background ,base00))))
    `(diff-removed ((t (:inherit diff-changed
-                       :foreground ,red
-                       :background ,base00))))
+                                :foreground ,red
+                                :background ,base00))))
 
    `(outline-1 ((t (:foreground ,red :height 1.7))))
    `(outline-2 ((t (:foreground ,orange :height 1.3))))
@@ -164,11 +170,11 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
 
    `(success ((t (:background ,green :foreground ,base00 :weight bold))))
    `(compilation-mode-line-exit ((t (:inherit compilation-info
-                                     :background ,green
-                                     :weight bold))))
+                                              :background ,green
+                                              :weight bold))))
    `(compilation-mode-line-fail ((t (:inherit compilation-error
-                                     :background ,red
-                                     :weight bold))))
+                                              :background ,red
+                                              :weight bold))))
 
    `(erc-dangerous-host-face ((t (:foreground ,red))))
    `(erc-direct-msg-face ((t (:foreground ,red))))
@@ -188,7 +194,6 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(erc-input-face ((t (:foreground ,orange))))
    `(erc-my-nick-face ((t (:foreground ,yellow))))
    `(erc-current-nick-face ((t (:foreground ,yellow))))
-
    `(show-paren-match ((t (:background ,base03 :foreground ,green))))
    `(show-paren-mismatch ((t (:background ,red :foreground ,base00))))
    `(sp-show-pair-match-face ((t (:inherit show-paren-match))))
@@ -199,25 +204,24 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(ac-candidate-mouse-face ((t (:inherit ac-completion-face))))
    `(ac-selection-face ((t (:background ,base02))))
    `(writegood-weasels-face ((t (:inherit font-lock-warning-face))))
-
    `(company-echo-common ((t (:foreground ,orange))))
    `(company-preview ((t (:background ,base02 :foreground ,base06))))
    `(company-preview-common ((t (:inherit company-preview
-                                 :foreground ,base05))))
+                                          :foreground ,base05))))
    `(company-preview-search ((t (:inherit company-preview
-                                 :background ,yellow))))
+                                          :background ,yellow))))
    `(company-scrollbar-bg ((t (:inherit company-tooltip :background ,violet))))
    `(company-scrollbar-fg ((t (:background ,blue))))
    `(company-template-field ((t (:background ,yellow :foreground ,violet))))
    `(company-tooltip ((t (:background ,base02 :foreground ,base04))))
    `(company-tooltip-annotation ((t (:inherit company-tooltip
-                                     :foreground ,base00))))
+                                              :foreground ,base00))))
    `(company-tooltip-common ((t (:inherit company-tooltip
-                                 :foreground ,base04))))
+                                          :foreground ,base04))))
    `(company-tooltip-common-selection ((t (:inherit company-tooltip-selection
-                                           :foreground ,yellow))))
+                                                    :foreground ,yellow))))
    `(company-tooltip-selection ((t (:inherit company-tooltip
-                                    :background ,base01))))
+                                             :background ,base01))))
    `(helm-buffer-directory ((t (:background ,base00 :foreground ,red))))
    `(helm-buffer-file ((t (:foreground ,base05 :background ,base00))))
    `(helm-buffer-not-saved ((t (:foreground ,orange))))
@@ -228,16 +232,15 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(helm-header ((t (:inherit header-line))))
    `(helm-prefarg ((t (:foreground ,green))))
    `(helm-selection ((t (:background ,green
-                         :foreground ,base00
-                         :underline nil))))
+                                     :foreground ,base00
+                                     :underline nil))))
    `(helm-separator ((t (:foreground ,red))))
    `(helm-source-header ((t (:background ,violet
-                             :foreground ,base00
-                             :weight bold :height 1.3))))
+                                         :foreground ,base00
+                                         :weight bold :height 1.3))))
    `(helm-visible-mark ((t (:background ,green :foreground ,base00))))
-
    `(whitespace-empty ((t (:background ,yellow :foreground ,base00))))
-            `(whitespace-hspace ((t (:background ,red :foreground ,yellow))))
+   `(whitespace-hspace ((t (:background ,red :foreground ,yellow))))
    `(whitespace-indentation ((t (:background ,red :foreground ,yellow))))
    `(whitespace-line ((t (:foreground ,red))))
    `(whitespace-newline ((t (:foreground ,base02 :weight normal))))
@@ -246,26 +249,32 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
    `(whitespace-pace-before-tab ((t (:background ,yellow :foreground ,orange))))
    `(whitespace-tab ((t (:background ,red :foreground ,yellow))))
    `(whitespace-trailing ((t (:background ,red
-                              :foreground ,yellow :weight bold))))
-
-    `(markdown-header-face ((t (:foreground ,red :weight bold))))
-    `(markdown-header-face-1 ((t (:inherit outline-1))))
-    `(markdown-header-face-2 ((t (:inherit outline-2))))
-    `(markdown-header-face-3 ((t (:inherit outline-3))))
-    `(markdown-header-face-4 ((t (:inherit outline-4))))
-    `(markdown-header-face-5 ((t (:inherit outline-5))))
+                                          :foreground ,yellow :weight bold))))
+   `(markdown-header-face ((t (:foreground ,red :weight bold))))
+   `(markdown-header-face-1 ((t (:inherit outline-1))))
+   `(markdown-header-face-2 ((t (:inherit outline-2))))
+   `(markdown-header-face-3 ((t (:inherit outline-3))))
+   `(markdown-header-face-4 ((t (:inherit outline-4))))
+   `(markdown-header-face-5 ((t (:inherit outline-5))))
+   `(elfeed-search-tag-face ((t (:foreground ,green))))
+   `(elfeed-search-feed-face ((t (:foreground "#ffc0fd"))))
+   `(elfeed-search-title-face ((t (:foreground ,blue))))
+   `(elfeed-search-unread-title-face ((t (:foreground ,base06))))
+   `(elfeed-search-date-face ((t (:foreground ,violet))))
+   `(vertical-border ((t (:foreground ,base01))))
+   `(osa-chrome-tab-active-face ((t (:foreground ,green))))
+   `(osa-chrome-tab-marked-face ((t (:foreground ,magenta))))
+   ;; `(osa-chrome-tab-filter-face ((t (:foreground ,red))))
+   `(gnus-summary-cancelled ((t (:foreground ,red))))
    )
-
   (custom-theme-set-variables
    'tronesque
-
    `(ansi-color-names-vector
      ;; black, red, green, yellow, blue, magenta, cyan, white
      [,base00 ,red ,green ,yellow ,blue ,magenta ,cyan ,base04])
    `(ansi-term-color-vector
      ;; black, red, green, yellow, blue, magenta, cyan, white
      [unspecified ,base00 ,red ,green ,yellow ,blue ,magenta ,cyan ,base04]))
-
   ;; Extra mode line faces
   (make-face 'mode-line-read-only-face)
   (make-face 'mode-line-modified-face)
@@ -277,15 +286,22 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
   (make-face 'mode-line-minor-mode-face)
   (make-face 'mode-line-vc-face)
   (make-face 'mode-line-80col-face)
-
+  ;; (set-face-attribute 'mode-line nil
+  ;;                     :foreground base00 :background base03
+  ;;                     :inverse-video nil
+  ;;                     :box `(:line-width 2 :color ,base03  :style nil))
   (set-face-attribute 'mode-line nil
-                      :foreground base00 :background base03
+                      :foreground base00 :background "#3882c2"
                       :inverse-video nil
-                      :box `(:line-width 2 :color ,base03  :style nil))
+                      :box `(:line-width 2 :color "#3882c2" :style nil))
+  ;; (set-face-attribute 'mode-line-inactive nil
+  ;;                     :foreground base00 :background base01
+  ;;                     :inverse-video nil
+  ;;                     :box `(:line-width 2 :color ,base01 :style nil))
   (set-face-attribute 'mode-line-inactive nil
-                      :foreground base00 :background base01
+                      :foreground base00 :background "#1d5483"
                       :inverse-video nil
-                      :box `(:line-width 2 :color ,base01 :style nil))
+                      :box `(:line-width 2 :color "#1d5483" :style nil))
   (set-face-attribute 'mode-line-read-only-face nil
                       :inherit 'mode-line-face
                       :foreground red)
@@ -326,8 +342,7 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
   (set-face-attribute 'mode-line-80col-face nil
                       :inherit 'mode-line-position-face
                       :foreground "black" :background orange
-                      :box `(:line-width 2 :color ,orange :style nil))
-  )
+                      :box `(:line-width 2 :color ,orange :style nil)))
 
 (defun tronesque-mode-line ()
   "Change default mode-line."
@@ -358,7 +373,6 @@ More information on Tron: https://en.wikipedia.org/wiki/Tron")
                   face mode-line-mode-face)
      (:propertize " "
                   face mode-line-mode-face)
-
      (:eval (propertize (format-mode-line minor-mode-alist)
                         'face 'mode-line-minor-mode-face))
      mode-line-misc-info
